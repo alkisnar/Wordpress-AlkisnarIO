@@ -1,0 +1,68 @@
+<!Doctype HTML>
+<html lang="en">
+<head>
+
+    <!-- Stylesheet for main page -->
+    <link rel="stylesheet" href="StyleSheetAlkisnarIO.CSS">
+
+    <!--trigger Counter-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://pxby95zsx5.execute-api.us-east-1.amazonaws.com/prod",
+        "method": "GET"
+      }
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+
+        var content = response.Item.VisitCount;
+        $("#Visitors").append(content);
+
+      });
+   </script>
+
+</head>
+<body>
+  <div>
+
+    <div style="position:fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h1 style="font-family:Lucida Console; font-size: 4vw;"> Alkisnar.IO Landing Page</h1>
+      <h1 style="font-family:Lucida Console; font-size: 2vw; padding: 10px;"> Abdul Bhatti</h1>
+    </div>
+
+    <div style="position:fixed; top: 60%; left: 50%; transform: translate(-50%, -50%); width: 90%; text-align: center;">
+
+      <div class="card" style="max-width: 30%; display: inline-block; vertical-align: middle">
+          <a href=https://blog.alkisnar.io/>
+          <img src="casual.jpg" style="width:100%">
+          </a>
+          <div class="container">
+          <h1><b>Development Blog</b></h4>  
+          </div>
+        </div>
+      <div class="card" style="max-width: 30%; display: inline-block; vertical-align: middle; margin-left: 1%; margin-right: 1%;">
+        <a href=https://resume.alkisnar.io/>
+        <img src="resume.png"style="width:100%">
+        </a>
+        <div class="container">
+          <h1><b>Online Resume</b></h4>  
+        </div>
+      </div>
+      <div class="card" style="max-width: 30%; display: inline-block; vertical-align: middle">
+        <a href=https://www.linkedin.com/in/abdul-bhatti-150365a1>
+        <img src="Business.jpg" style="width:100%">
+        </a>
+        <div class="container">
+          <h1><b>Linkedin Account</b></h4> 
+        </div>
+      </div>
+
+      <div id="Visitors"; style="font-size: 2vw;font: bold;font-family: Lucida Console; padding: 10px;"> You Are Visitor </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
